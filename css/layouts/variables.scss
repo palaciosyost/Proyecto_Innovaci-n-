@@ -1,0 +1,16 @@
+$color-primary: #207eff;
+$color-input:#F6F6F6;
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+
+/* Cambiar el color del scrollbar y del thumb */
+::-webkit-scrollbar {
+  width: 12px; /* Ancho del scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $color-primary; /* Color del thumb */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Color del área del scroll */
+}

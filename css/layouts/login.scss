@@ -1,0 +1,88 @@
+@import "variables.scss";
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0px;
+  font-family: sans-serif;
+}
+.body {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(../assets/img/fondo.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  .login {
+    width: 400px;
+    height: 100vh;
+    background-color: white;
+    position: absolute;
+    right: 0px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: -4px 3px 10px 0px rgba(0, 0, 0, 0.439);
+    img {
+      width: 100px;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
+    h1 {
+      color: $color-primary;
+      margin-bottom: 40px;
+    }
+    p {
+      font-size: 11px;
+      text-align: right;
+      padding-right: 10px;
+    }
+    form {
+      div {
+        width: max-content;
+        position: relative;
+        margin-bottom: 30px;
+        svg {
+          position: absolute;
+          left: 12px;
+          top: 10px;
+          width: 18px;
+        }
+        .svg-eyes {
+          position: absolute;
+          right: 10px;
+          top: 10px;
+          cursor: pointer;
+          svg {
+            left: inherit;
+            top: 0px;
+            right: 0px;
+            position: absolute;
+          }
+        }
+        input {
+          padding-left: 40px;
+          background-color: $color-input;
+          border: 0px;
+          border-radius: 20px;
+          width: 300px;
+          height: 38px;
+        }
+      }
+
+      button {
+        border: 0px;
+        font-weight: 600;
+        background-color: $color-primary;
+        color: white;
+        width: 300px;
+        height: 37px;
+        border-radius: 20px;
+      }
+    }
+  }
+}
