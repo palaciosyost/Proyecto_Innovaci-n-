@@ -17,6 +17,9 @@ $form.addEventListener("submit", (e) => {
       console.log(datos);
       if (datos != 1 && datos != 2) {
         $alert.innerHTML = datos;
+        setTimeout(() => {
+          $alert.textContent = '';
+        }, 2500);
       } else {
         switch (datos) {
           case '1':

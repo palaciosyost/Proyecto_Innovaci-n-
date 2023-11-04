@@ -30,7 +30,7 @@ class Login
                 session_start();
                 $_SESSION['login'] = $rol;
             } else {
-                echo '<div class="alert-danger" id="AlertaNone"><p class="text-danger mb-0">ERROR credenciales no encontrados</p></div>';
+                echo '<div class="alert alert-danger" id="AlertaNone"><p class="text-danger mb-0">ERROR credenciales no encontrados</p></div>';
             }
         } catch (Exception $error) {
             die('Error del servidor de usuario ' . $error->getMessage());

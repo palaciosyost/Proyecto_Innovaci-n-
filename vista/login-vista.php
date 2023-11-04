@@ -3,7 +3,7 @@
 if (isset($_POST["usuario"]) or isset($_POST["contraseña"])) {
     if (empty($_POST["usuario"]) or empty($_POST['contraseña'])) {
 ?>
-        <div class="alert-danger" id="AlertaNone">
+        <div class="alert alert-danger" id="AlertaNone">
             <p class="text-danger mb-0">ERROR: no se puede dejar en blanco los campos</p>
         </div>
 <?php
