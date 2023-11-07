@@ -32,9 +32,9 @@
                     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-key-fill" viewBox="0 0 16 16">
                         <path d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2zM2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
                     </svg>
-                    <input type="password" name="contraseña" placeholder="Contraseña">
-                    <div class="svg-eyes" id="svg-pass">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+                    <input type="password" id="password" name="contraseña" placeholder="Contraseña">
+                    <div class="svg-eyes" >
+                        <svg xmlns="http://www.w3.org/2000/svg" id="svg-pass" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
                             <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
                             <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
                         </svg>
@@ -48,7 +48,7 @@
 
         </div>
     </div>
-    <script type="module" src="public/js/mani.js"></script>
+    <script type="module" src="public/js/main.js"></script>
     <script src="public/js/loginAjax.js"></script>
 </body>
 
