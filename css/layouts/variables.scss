@@ -1,7 +1,9 @@
 $color-primary: #207eff;
-$color-input:#F6F6F6;
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
-
+$color-input: #f6f6f6;
+$colort-nav: #122f3b;
+$color-enalces: #2a7dca;
+$color-text-enlace :white;
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
 /* Cambiar el color del scrollbar y del thumb */
 ::-webkit-scrollbar {
   width: 12px; /* Ancho del scrollbar */

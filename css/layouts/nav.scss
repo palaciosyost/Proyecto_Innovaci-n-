@@ -1,0 +1,82 @@
+@import "variables.scss";
+
+.nav-page {
+  background-color: $colort-nav;
+  width: 300px;
+  height: 100vh;
+  position: fixed;
+  left: 0px;
+  z-index: 900;
+  top: 0px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-between;
+  .img-logo {
+    width: 200px;
+    height: 200px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .enlaces-nav {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    a {
+      text-decoration: none;
+      color: $color-text-enlace;
+      background-color: $color-enalces;
+      width: 200px;
+      height: 30px;
+      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 600;
+      font-size: 14px;
+    }
+  }
+  .btn-exit {
+    width: 50px;
+    margin-bottom: 20px;
+    height: 50px;
+    background-color: rgb(230, 30, 30);
+    border-radius: 7px;
+    a {
+      width: 100%;
+      height: 100%;
+      text-decoration: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      svg {
+        color: $color-text-enlace;
+        width: 30px;
+      }
+    }
+  }
+}
+.barra-top-nav {
+  background: #fff;
+  box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.38);
+  position: relative;
+  top: 0px;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-flow: row;
+  justify-content: end;
+  align-items:center;
+  span {
+    margin-right:10px;
+    font-weight: 450;
+  }
+  .icono-login {
+    margin-right:20px;
+    width: 20px;
+  }
+}
