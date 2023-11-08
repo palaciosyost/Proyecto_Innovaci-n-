@@ -1,4 +1,5 @@
 const d = document;
+console.log("Plataforma: " + navigator.platform);
 
 let $alert = d.querySelector(".alertas"),
   $form = d.getElementById("form-login");
@@ -18,14 +19,14 @@ $form.addEventListener("submit", (e) => {
       if (datos != 1 && datos != 2) {
         $alert.innerHTML = datos;
         setTimeout(() => {
-          $alert.textContent = '';
+          $alert.textContent = "";
         }, 2500);
       } else {
         switch (datos) {
-          case '1':
+          case "1":
             location.href = "public/administrador/";
             break;
-          case '2':
+          case "2":
             location.href = "public/sistemas/";
             break;
         }
