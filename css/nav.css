@@ -45,14 +45,19 @@
   text-decoration: none;
   color: white;
   background-color: #2a7dca;
-  width: 200px;
+  width: 150px;
   height: 30px;
   border-radius: 5px;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 13px;
+  transition: all 0.2s ease;
+  font-family: "Nunito", sans-serif;
+}
+.nav-page .enlaces-nav a:hover {
+  transform: scale(1.1);
 }
 .nav-page .btn-exit {
   width: 50px;
@@ -77,18 +82,25 @@
 .barra-top-nav {
   background: #fff;
   box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.38);
-  position: relative;
+  position: absolute;
   top: 0px;
-  width: 100%;
+  right: 0px;
+  width: calc(100% - 300px);
   height: 50px;
   display: flex;
   flex-flow: row;
   justify-content: end;
   align-items: center;
 }
-.barra-top-nav span {
+.barra-top-nav a {
+  text-decoration: none;
+  color: black;
   margin-right: 10px;
   font-weight: 450;
+  transition: all 0.2s ease;
+}
+.barra-top-nav a:hover {
+  text-decoration: underline;
 }
 .barra-top-nav .icono-login {
   margin-right: 20px;

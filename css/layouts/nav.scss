@@ -30,14 +30,19 @@
       text-decoration: none;
       color: $color-text-enlace;
       background-color: $color-enalces;
-      width: 200px;
+      width: 150px;
       height: 30px;
       border-radius: 5px;
       display: flex;
-      justify-content: center;
+      justify-content: space-evenly;
       align-items: center;
       font-weight: 600;
-      font-size: 14px;
+      font-size: 13px;
+      transition: all 0.2s ease;
+      font-family: "Nunito", sans-serif;
+      &:hover {
+        transform: scale(1.1);
+      }
     }
   }
   .btn-exit {
@@ -63,20 +68,27 @@
 .barra-top-nav {
   background: #fff;
   box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.38);
-  position: relative;
+  position: absolute;
   top: 0px;
-  width: 100%;
+  right: 0px;
+  width: calc(100% - 300px);
   height: 50px;
   display: flex;
   flex-flow: row;
   justify-content: end;
-  align-items:center;
-  span {
-    margin-right:10px;
+  align-items: center;
+  a {
+    text-decoration: none;
+    color: black;
+    margin-right: 10px;
     font-weight: 450;
+    transition: all 0.2s ease;
+    :scope &:hover {
+      text-decoration: underline;
+    }
   }
   .icono-login {
-    margin-right:20px;
+    margin-right: 20px;
     width: 20px;
   }
 }

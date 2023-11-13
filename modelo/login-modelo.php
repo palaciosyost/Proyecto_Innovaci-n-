@@ -26,6 +26,13 @@ class Login
             $resul = $query->fetch(PDO::FETCH_ASSOC);
 
             if ($resul) {
+                $nombreCookie = "sesioncookie";
+
+                $valorCookie = json_encode($resul);
+                $tiempoExpiracion = time() + 86400;
+                $rutaCookie = "/";
+                // $dominioCookie = "fdc-corporation.com";
+                setcookie($nombreCookie, $valorCookie, $tiempoExpiracion, $rutaCookie);
                 $rol = $resul['id_rol'];
                 session_start();
                 $_SESSION['login'] = $rol;
