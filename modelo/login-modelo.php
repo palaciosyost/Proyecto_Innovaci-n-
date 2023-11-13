@@ -26,6 +26,9 @@ class Login
             $resul = $query->fetch(PDO::FETCH_ASSOC);
 
             if ($resul) {
+                $expiracion = time() + 24 * 60 * 60; // 24 horas * 60 minutos * 60 segundos
+                $valor = json_encode($resul);
+                setcookie('sesioncookie', $valor, $expiracion, '/');
                 $rol = $resul['id_rol'];
                 session_start();
                 $_SESSION['login'] = $rol;
