@@ -2,7 +2,7 @@
 
 body {
   margin: 0px;
-  font-family: sans-serif;
+  font-family: "Exo", sans-serif;
 }
 
 // seccion de navegacion index.php
@@ -62,6 +62,7 @@ body {
       margin-bottom: 40px;
       display: flex;
       flex-flow: row wrap;
+      // justify-content: center;
       align-items: center;
       gap: 20px;
       .enlace {
@@ -96,12 +97,16 @@ body {
       }
     }
     .descripcion-manual {
-      width: 720px;
+      width: 75%;
       font-size: 13.5px;
       margin-top: 40px;
       line-height: 25px;
+      @include compuMax {
+        width: 50%;
+      }
     }
     .enlace-manual {
+      margin-bottom: 40px;
       text-decoration: none;
       margin-top: 30px;
       color: black;

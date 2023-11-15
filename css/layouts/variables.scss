@@ -1,8 +1,7 @@
 $color-primary: #207eff;
 $color-input: #f6f6f6;
 $color-header: #f4f4f4;
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@100;200;300;400;500;600;700;800;900&display=swap');
 /* Cambiar el color del scrollbar y del thumb */
 ::-webkit-scrollbar {
   width: 12px; /* Ancho del scrollbar */
@@ -14,4 +13,25 @@ $color-header: #f4f4f4;
 
 ::-webkit-scrollbar-track {
   background-color: #f1f1f1; /* Color del área del scroll */
+}
+
+@mixin tablet {
+  @media screen and (min-width: 600px) {
+    @content;
+  }
+}
+@mixin laptop {
+  @media screen and (min-width: 800px) {
+    @content;
+  }
+}
+@mixin compu {
+  @media screen and (min-width: 1000px) {
+    @content;
+  }
+}
+@mixin compuMax {
+  @media screen and (min-width: 1450px) {
+    @content;
+  }
 }

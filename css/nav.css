@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Exo:wght@100;200;300;400;500;600;700;800;900&display=swap");
 /* Cambiar el color del scrollbar y del thumb */
 ::-webkit-scrollbar {
   width: 12px; /* Ancho del scrollbar */
@@ -15,7 +15,7 @@
 
 body {
   margin: 0px;
-  font-family: sans-serif;
+  font-family: "Exo", sans-serif;
 }
 
 .panel-page-index {
@@ -109,12 +109,18 @@ body {
   color: black;
 }
 .panel-page-index .body-page .descripcion-manual {
-  width: 720px;
+  width: 75%;
   font-size: 13.5px;
   margin-top: 40px;
   line-height: 25px;
 }
+@media screen and (min-width: 1450px) {
+  .panel-page-index .body-page .descripcion-manual {
+    width: 50%;
+  }
+}
 .panel-page-index .body-page .enlace-manual {
+  margin-bottom: 40px;
   text-decoration: none;
   margin-top: 30px;
   color: black;
