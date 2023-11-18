@@ -57,7 +57,6 @@ $data = json_decode($_COOKIE['sesioncookie'], true);
             <div class=" input-group flex-nowrap">
                 <input type="text" class="form-control" name="apellido" disabled placeholder="Apellido">
             </div>
-            <input type="submit" style="margin-bottom: 20px;" value="Buscar">
             <div class="input-group flex-nowrap">
                 <input type="text" class="form-control" placeholder="Username">
             </div>

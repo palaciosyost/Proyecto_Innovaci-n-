@@ -1,10 +1,9 @@
+let $form = document.querySelector("#form"),
+  $dni = document.querySelector('input[name="dni"]'),
+  $nombre = document.querySelector('input[name="nombre"]'),
+  $apellido = document.querySelector('input[name="apellido"]'),
+  $token = document.querySelector('input[name="token"]').value;
 function ApiResul() {
-  let $form = document.querySelector("#form"),
-    $dni = document.querySelector('input[name="dni"]'),
-    $nombre = document.querySelector('input[name="nombre"]'),
-    $apellido = document.querySelector('input[name="apellido"]'),
-    $token = document.querySelector('input[name="token"]').value;
-
   $dni.addEventListener("keyup", (e) => {
     fetch(
       `https://dniruc.apisperu.com/api/v1/dni/${e.target.value}?token=${$token}`
@@ -34,3 +33,19 @@ function ApiResul() {
 }
 
 ApiResul();
+
+function AjaxForm() {
+  let $form = document.querySelector("#form");
+
+  $form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    let data = new FormData($form);
+
+    // Print form data to the console
+    console.log(data.get("dni"));
+    console.log($nombre.value.toLocaleLowerCase());
+  });
+}
+
+AjaxForm();
