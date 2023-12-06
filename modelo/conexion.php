@@ -3,7 +3,7 @@
 
 class Conexion
 {
-    public static function conexiom()
+    public static function conexion()
     {
         try {
             $conexion = new PDO('mysql:host=localhost; dbname=bandeja-correos', 'root', '');

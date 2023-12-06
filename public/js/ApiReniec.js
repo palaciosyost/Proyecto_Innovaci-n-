@@ -2,7 +2,9 @@ let $form = document.querySelector("#form"),
   $dni = document.querySelector('input[name="dni"]'),
   $nombre = document.querySelector('input[name="nombre"]'),
   $apellido = document.querySelector('input[name="apellido"]'),
+  $contraseña = document.querySelector('input[name="contraseña"]'), // Eliminé el signo "+" aquí
   $token = document.querySelector('input[name="token"]').value;
+
 function ApiResul() {
   $dni.addEventListener("keyup", (e) => {
     fetch(
@@ -22,7 +24,7 @@ function ApiResul() {
       .then((response) => {
         console.log(response);
         $nombre.value = response.nombres;
-        $apellido.value = response.apellidoPaterno;
+        $apellido.value = response.apellidoPaterno + ' ' +response.apellidoMaterno;
       })
       .catch((error) => {
         console.error("Error:", error.message);
@@ -42,9 +44,23 @@ function AjaxForm() {
 
     let data = new FormData($form);
 
-    // Print form data to the console
     console.log(data.get("dni"));
-    console.log($nombre.value.toLocaleLowerCase());
+    console.log($nombre.value);
+    console.log($apellido.value);
+    console.log($contraseña.value)
+    fetch('../../controlador/set-usuarios-controlador.php', {
+      method : 'POST',
+      headers : { 'append': 'Content-Type', },
+      body : {
+        nombres_P : $nombre.value + ' ' + $apellido.value,
+        dni : $dni.value,
+        contraseña : $contraseña.value,
+      }
+    }).then(resul => {
+      
+    }).then(resultado => {
+
+    });
   });
 }
 

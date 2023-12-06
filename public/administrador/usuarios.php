@@ -45,7 +45,9 @@ $data = json_decode($_COOKIE['sesioncookie'], true);
                 </svg></span>
         </div>
     </div>
-
+    <div class="enlace-nav-page">
+        <p><span> <a href="/">Inicio</a></span> / <span> <a href="">Usuario</a></span></p>
+    </div>
     <div class="">
         <form action="" id="form" style="width: 500px;margin-top: 100px; margin-right: auto; margin-left: auto;" method="post">
             <div class="input-group flex-nowrap">
@@ -58,7 +60,7 @@ $data = json_decode($_COOKIE['sesioncookie'], true);
                 <input type="text" class="form-control" name="apellido" disabled placeholder="Apellido">
             </div>
             <div class="input-group flex-nowrap">
-                <input type="text" class="form-control" placeholder="Username">
+                <input type="password" class="form-control" name="contraseña" placeholder="Contraseña">
             </div>
             <input type="submit" value="Guardar">
             <input type="hidden" name="token" value="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6InBhbGFjaW9zeW9zdGluOTAzQGdtYWlsLmNvbSJ9.IpfB8t84oxQ832yta4RvvzPWuqo3-jx04ZGaf2dZx70">

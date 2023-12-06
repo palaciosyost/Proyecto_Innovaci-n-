@@ -8,7 +8,7 @@ class Login
     {
         try {
             require_once 'conexion.php';
-            $this->conexion = Conexion::conexiom(); // Corregido de conexiom a conexion
+            $this->conexion = Conexion::conexion(); // Corregido de conexiom a conexion
         } catch (Exception $error) {
             die('Error en la conexión a la base de datos en el modelo de login -> ' . $error->getMessage());
         }

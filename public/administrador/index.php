@@ -2,18 +2,18 @@
 session_start();
 if (isset($_GET['cerrar'])) {
     session_destroy();
-    header('location: ../../index.php');
+    header('location: ../../');
 } elseif (!isset($_COOKIE['sesioncookie'])) {
     session_destroy();
     header('location: ../../index.php');
 } elseif (isset($_SESSION['login'])) {
     if ($_SESSION['login'] != 1) {
         session_destroy();
-        header('location: ../../index.php');
+        header('location: ../../');
     }
 } else {
     session_destroy();
-    header('location: ../../index.php');
+    header('location: ../../');
 }
 $data = json_decode($_COOKIE['sesioncookie'], true);
 ?>
