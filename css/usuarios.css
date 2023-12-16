@@ -1,0 +1,39 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Exo:wght@100;200;300;400;500;600;700;800;900&display=swap");
+/* Cambiar el color del scrollbar y del thumb */
+::-webkit-scrollbar {
+  width: 12px; /* Ancho del scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #207eff; /* Color del thumb */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Color del área del scroll */
+}
+
+body {
+  margin: 0px;
+  font-family: "Exo", sans-serif;
+}
+
+.main-contenedor {
+  width: 80vw;
+  height: auto;
+  margin-right: auto;
+  margin-left: auto;
+}
+.main-contenedor #btn-formContacto {
+  margin-top: 30px;
+}
+.main-contenedor .titulo {
+  font-size: 30px;
+  color: #207eff;
+  font-weight: 700;
+}
+.main-contenedor .modal-body form .input-group {
+  margin-bottom: 15px;
+}
+
+/*# sourceMappingURL=usuarios.css.map */

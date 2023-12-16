@@ -43,20 +43,62 @@ body {
   width: 100%;
   height: 100%;
 }
-.panel-page-index .header-page h1 {
+.panel-page-index .header-page .titulo-header {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+}
+.panel-page-index .header-page .titulo-header h1 {
   font-size: 28px;
   font-weight: 800;
   color: #207eff;
 }
-.panel-page-index .header-page span {
+.panel-page-index .header-page .titulo-header span {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 5px;
+  margin-left: 5px;
 }
-.panel-page-index .header-page span svg {
+.panel-page-index .header-page .titulo-header span svg {
   color: #207eff;
   cursor: pointer;
+}
+.panel-page-index .header-page .titulo-header .text-header {
+  width: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+}
+.panel-page-index .header-page .enlace-nav-page {
+  width: max-content;
+  height: auto;
+}
+.panel-page-index .header-page .enlace-nav-page p {
+  font-size: 13px;
+  margin-left: 5px;
+}
+.panel-page-index .header-page .enlace-nav-page p span {
+  display: flex;
+  align-items: center;
+}
+.panel-page-index .header-page .enlace-nav-page p span a {
+  color: black;
+  text-decoration: none;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.panel-page-index .header-page .enlace-nav-page p span a svg {
+  width: 16px;
+  padding-bottom: 3px;
+  color: black;
+}
+.panel-page-index .header-page .enlace-nav-page p span a:hover {
+  color: #207eff;
+  text-decoration: underline;
+}
+.panel-page-index .header-page .enlace-nav-page p span a:hover svg {
+  color: #207eff;
 }
 .panel-page-index .body-page {
   width: 90%;

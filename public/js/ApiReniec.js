@@ -2,9 +2,11 @@ let $form = document.querySelector("#form"),
   $dni = document.querySelector('input[name="dni"]'),
   $nombre = document.querySelector('input[name="nombre"]'),
   $apellido = document.querySelector('input[name="apellido"]'),
-  $contraseña = document.querySelector('input[name="contraseña"]'), // Eliminé el signo "+" aquí
+  $rol = document.querySelector('select[name="rol"]'),
+  $contraseña = document.querySelector('input[name="contraseña"]'),
   $token = document.querySelector('input[name="token"]').value;
 
+// DATOS CON API RENIEC FORM CONTACTO
 function ApiResul() {
   $dni.addEventListener("keyup", (e) => {
     fetch(
@@ -15,8 +17,6 @@ function ApiResul() {
           return response.json();
         } else if (response.status === 404) {
           throw new Error("DNI no encontrado");
-          $nombre.value = "";
-          $apellido.value = "";
         } else {
           throw new Error("Error en la solicitud");
         }
@@ -24,7 +24,7 @@ function ApiResul() {
       .then((response) => {
         console.log(response);
         $nombre.value = response.nombres;
-        $apellido.value = response.apellidoPaterno + ' ' +response.apellidoMaterno;
+        $apellido.value = response.apellidoPaterno;
       })
       .catch((error) => {
         console.error("Error:", error.message);
@@ -36,32 +36,33 @@ function ApiResul() {
 
 ApiResul();
 
+// INSERCIÓN DE DATOS FORMULARIO DE CONTACTOS
 function AjaxForm() {
-  let $form = document.querySelector("#form");
-
   $form.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    let data = new FormData($form);
-
-    console.log(data.get("dni"));
-    console.log($nombre.value);
-    console.log($apellido.value);
-    console.log($contraseña.value)
-    fetch('../../controlador/set-usuarios-controlador.php', {
-      method : 'POST',
-      headers : { 'append': 'Content-Type', },
-      body : {
-        nombres_P : $nombre.value + ' ' + $apellido.value,
-        dni : $dni.value,
-        contraseña : $contraseña.value,
-      }
-    }).then(resul => {
-      
-    }).then(resultado => {
-
-    });
+    let data = {
+      nombres_P: $nombre.value + " " + $apellido.value,
+      dni: $dni.value,
+      contraseña: $contraseña.value,
+      rol: $rol.value,
+    };
+    fetch("../../controlador/set-usuarios-controlador.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((resul) => {
+        return resul.text();
+      })
+      .then((resultado) => {
+        console.log(resultado);
+      });
   });
 }
 
 AjaxForm();
+
+

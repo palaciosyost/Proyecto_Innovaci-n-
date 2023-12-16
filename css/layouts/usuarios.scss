@@ -1,0 +1,27 @@
+@import "variables.scss";
+
+body {
+  margin: 0px;
+  font-family: "Exo", sans-serif;
+}
+.main-contenedor {
+  width: 80vw;
+  height: auto;
+  margin-right: auto;
+  margin-left: auto;
+  #btn-formContacto{
+    margin-top: 30px;
+  }
+  .titulo {
+    font-size: 30px;
+    color: $color-primary;
+    font-weight: 700;
+  }
+  .modal-body {
+    form {
+      .input-group {
+        margin-bottom: 15px;
+      }  
+    }
+  }
+}

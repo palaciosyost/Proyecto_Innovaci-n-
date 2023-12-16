@@ -5,3 +5,4 @@ const d = document;
 d.addEventListener("DOMContentLoaded", () => {
   verPassword("scg-pass", "password");
 });
+
