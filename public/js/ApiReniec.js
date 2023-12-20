@@ -42,7 +42,8 @@ function AjaxForm() {
     e.preventDefault();
 
     let data = {
-      nombres_P: $nombre.value + " " + $apellido.value,
+      nombres_P: $nombre.value,
+      apellido: $apellido.value,
       dni: $dni.value,
       contraseña: $contraseña.value,
       rol: $rol.value,
@@ -55,7 +56,7 @@ function AjaxForm() {
       body: JSON.stringify(data),
     })
       .then((resul) => {
-        return resul.text();
+        return resul.text();0
       })
       .then((resultado) => {
         console.log(resultado);
@@ -64,5 +65,3 @@ function AjaxForm() {
 }
 
 AjaxForm();
-
-

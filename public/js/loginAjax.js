@@ -1,8 +1,10 @@
 const d = document;
 
 let $alert = d.querySelector(".alertas"),
+  $inputPassword = d.getElementById("password"),
   $form = d.getElementById("form-login");
 console.log($form);
+console.log($inputPassword);
 $form.addEventListener("submit", (e) => {
   e.preventDefault();
   let data = new FormData($form);
@@ -18,14 +20,15 @@ $form.addEventListener("submit", (e) => {
       if (datos != 1 && datos != 2) {
         $alert.innerHTML = datos;
         setTimeout(() => {
-          $alert.textContent = '';
+          $alert.textContent = "";
         }, 2500);
+        $inputPassword.value = "";
       } else {
         switch (datos) {
-          case '1':
+          case "1":
             location.href = "public/administrador/";
             break;
-          case '2':
+          case "2":
             location.href = "public/sistemas/";
             break;
         }

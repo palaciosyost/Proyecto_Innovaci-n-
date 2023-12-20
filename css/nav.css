@@ -18,6 +18,12 @@ body {
   font-family: "Exo", sans-serif;
 }
 
+h1 {
+  font-size: 28px;
+  font-weight: 800;
+  color: #207eff;
+}
+
 .panel-page-index {
   width: 100%;
   height: auto;
@@ -33,6 +39,17 @@ body {
   align-items: center;
   justify-content: flex-start;
   background-color: #f4f4f4;
+}
+.panel-page-index .header-page span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-left: 5px;
+}
+.panel-page-index .header-page span svg {
+  color: #207eff;
+  cursor: pointer;
 }
 .panel-page-index .header-page .img-header-page {
   margin-left: 30px;

@@ -8,11 +8,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <!-- ESTILOS DE MANERA LOCAL -->
+    <link rel="stylesheet" href="css/loader.css">
     <link rel="stylesheet" href="css/login.css">
     <title>Login</title>
 </head>
 
 <body>
+    <?php include('vista/loader.php') ?>
     <div class="body">
         <div class="login">
             <h1>Iniciar sesion</h1>
@@ -20,7 +22,7 @@
 
             </div>
             <!-- <span>Bandeja de envios email FDC CORP</span> -->
-            <form action="" method="post" id="form-login">
+            <form  action="" method="post" id="form-login">
                 <div>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                         <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
@@ -50,6 +52,9 @@
     </div>
     <script type="module" src="public/js/main.js"></script>
     <script src="public/js/loginAjax.js"></script>
+    <script src="public/js/loader.js"></script>
+    <script src="public/js/alert.js"></script>
+
 </body>
 
 </html>

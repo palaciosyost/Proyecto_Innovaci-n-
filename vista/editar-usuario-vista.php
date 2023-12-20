@@ -2,11 +2,12 @@
 $jsonData = file_get_contents('php://input');
 $data = json_decode($jsonData, true);
 
-
+$id = $data['id'];
 $dni = $data['dni'];
-$nombres_P = $data['nombres_P'];
+$nombre = $data['nombres'];
+$apellido = $data['apellido'];
 $contraseña = md5($data['contraseña']);
 $rol = $data['rol'];
-$apellido = $data['apellido'];
+
 $SetData = new SetUsuario();
-$SetData->Set_Usuario($nombres_P, $dni, $contraseña, $rol, $apellido);
+$SetData->UpdateUsuario($id, $nombre, $apellido, $dni, $contraseña, $rol);

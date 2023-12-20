@@ -29,10 +29,14 @@ $data = json_decode($_COOKIE['sesioncookie'], true);
     <!-- Estilos locales css -->
     <link rel="stylesheet" href="../../css/nav.css">
     <link rel="stylesheet" href="../../css/usuarios.css">
+    <link rel="stylesheet" href="../../css/loader.css">
+
     <title>Usuario | FDC CORP</title>
 </head>
 
 <body>
+    <?php include('../../vista/loader.php') ?>
+
     <div class="panel-page-index">
 
         <div class="header-page">
@@ -67,6 +71,7 @@ $data = json_decode($_COOKIE['sesioncookie'], true);
 
         </div>
     </div>
+
     <div class="main-contenedor">
         <button data-bs-toggle="modal" data-bs-target="#exampleModal" id='btn-formContacto' class="btn btn-warning" type="button">Añadir nuevo <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
                 <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4" />
@@ -78,7 +83,7 @@ $data = json_decode($_COOKIE['sesioncookie'], true);
                 <div class="modal-content">
                     <div class="modal-header">
                         <h1 class="modal-title fs-5" id="exampleModalLabel">Añadir nuevo Usuario</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <button type="button" onclick="refrescar()" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <form action="" id="form" method="post">
@@ -105,7 +110,7 @@ $data = json_decode($_COOKIE['sesioncookie'], true);
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" onclick="refrescar()" data-bs-dismiss="modal">Close</button>
                         <input type="submit" class="btn btn-primary" value="Guardar">
 
                         </form>
@@ -116,10 +121,57 @@ $data = json_decode($_COOKIE['sesioncookie'], true);
         </div>
 
         <!-- </div> -->
+        <div class="card-usuarios">
+            <?php include('../../controlador/get-usuarios-controlador.php') ?>
 
+        </div>
+    </div>
 
+    <!-- MODAL PARA EDITA USUARIOS -->
+    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Usuario</h1>
+                    <button type="button" onclick="refrescar()" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="" id="form2" method="post">
+                        <div class="input-group flex-nowrap">
+                            <input type="text" class="form-control" name="dni-editar" placeholder="DNI">
+                        </div>
+                        <div class="input-group flex-nowrap">
+                            <input type="text" class="form-control" name="nombre-editar" placeholder="Nombre">
+                        </div>
+                        <div class=" input-group flex-nowrap">
+                            <input type="text" class="form-control" name="apellido-editar" placeholder="Apellido">
+                        </div>
+                        <div class="input-group flex-nowrap">
+                            <input type="password" class="form-control" name="contraseña-editar" placeholder="Contraseña">
+                        </div>
+                        <div class="input-group flex-nowrap">
+                            <select class="form-select" name="rol-editar" aria-label="Default select example">
+                                <option selected>Select. rol</option>
+                                <option value="1">Administrador</option>
+                                <option value="2">Sistemas</option>
+                            </select>
+                        </div>
+                        <input type="hidden" name="id">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="refrescar()" data-bs-dismiss="modal">Close</button>
+                    <input type="submit" class="btn btn-primary" value="Guardar">
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
     </div>
     <script src="../js/alert.js"></script>
+    <script src="../js/loader.js"></script>
+    <script src="../js/Usuarios-action.js"></script>
     <script src="../js/ApiReniec.js"></script>
 </body>
 

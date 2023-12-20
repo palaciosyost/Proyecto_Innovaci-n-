@@ -4,6 +4,11 @@ body {
   margin: 0px;
   font-family: "Exo", sans-serif;
 }
+h1 {
+  font-size: 28px;
+  font-weight: 800;
+  color: $color-primary;
+}
 
 // seccion de navegacion index.php
 .panel-page-index {
@@ -20,6 +25,17 @@ body {
     align-items: center;
     justify-content: flex-start;
     background-color: $color-header;
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      margin-left: 5px;
+      svg {
+        color: $color-primary;
+        cursor: pointer;
+      }
+    }
     .img-header-page {
       margin-left: 30px;
       width: 150px;
@@ -80,7 +96,7 @@ body {
             &:hover {
               color: $color-primary;
               text-decoration: underline;
-              svg{
+              svg {
                 color: $color-primary;
               }
             }
