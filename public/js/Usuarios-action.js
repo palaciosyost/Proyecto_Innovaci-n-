@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
   document.addEventListener("click", (e) => {
     // validacion de btn de editar usuarios
     if (e.target.matches(".card__btn-solid")) {
-      console.log(e.target.dataset.nombre);
       $inputNombre.value = e.target.dataset.nombre;
       $inputDNI.value = e.target.dataset.dni;
       $inputId.value = e.target.dataset.id;
@@ -52,7 +51,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
               return resul.text();
             })
             .then((resultado) => {
-              console.log(resultado);
+              document.querySelector(".mensaje-resul").innerHTML = resultado;
             });
         });
       }
@@ -80,7 +79,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
           return resul.text();
         })
         .then((resultado) => {
-          console.log(resultado);
           if (resultado == 1) {
             window.location.reload();
           }

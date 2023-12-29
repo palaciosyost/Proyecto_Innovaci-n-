@@ -35,13 +35,73 @@ class SetUsuario
             $filasAfectadas = $query->rowCount();
 
             if ($filasAfectadas > 0) {
-                echo 'Éxito';
+?>
+                <div class="notifications-container">
+                    <div class="success">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <svg class="succes-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <div class="success-prompt-wrap">
+                                <p class="success-prompt-heading"><?php echo $nombre . ' ' . $apellido ?></p>
+                                <div class="success-prompt-prompt">
+                                    <p>fue creado correctamente</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            <?php
             } else {
-                echo 'Error: No se insertaron filas';
+            ?>
+                <div class="notifications-container">
+                    <div class="error-alert">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+
+                                <svg aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" class="error-svg">
+                                    <path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" fill-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <div class="error-prompt-container">
+                                <p class="error-prompt-heading">Your password isn't strong enough
+                                </p>
+                                <div class="error-prompt-wrap">
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            <?php
             }
         } catch (Exception $ErrorConsulta) {
-            die('ERROR.. NO SE PUDO INGRESAR LOS DATOS.' . $ErrorConsulta->getMessage());
-        }
+            ?>
+            <div class="notifications-container">
+                <div class="error-alert">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+
+                            <svg aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" class="error-svg">
+                                <path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" fill-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <div class="error-prompt-container">
+                            <p class="error-prompt-heading">No se pudo ingresar el usuario
+                            </p>
+                            <div class="error-prompt-wrap">
+                                <p>Lo sentimos... al parecer tenemos problemas al ejecutar esta accion</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <?php        }
     }
     public function UpdateUsuario($id, $nombre, $apellido, $dni, $contraseña, $rol)
     {
@@ -55,10 +115,52 @@ class SetUsuario
             $query->bindValue(':rol', $rol);
             $query->bindValue(':id', $id);
             $query->execute();
-            $resul = $query->fetch(PDO::FETCH_ASSOC);
-            echo 'Éxito';
+            $query->fetch(PDO::FETCH_ASSOC);
+        ?>
+            <div class="notifications-container">
+                <div class="success">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="succes-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <div class="success-prompt-wrap">
+                            <p class="success-prompt-heading"><?php echo $nombre . ' ' . $apellido ?></p>
+                            <div class="success-prompt-prompt">
+                                <p>fue creado actualizado correctamente</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        <?php
         } catch (Exception $error) {
-            die('ERROR DE ENTREGA: DATOS NO ENCONTRADOS ' . $error->getMessage());
+        ?>
+            <div class="notifications-container">
+                <div class="error-alert">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+
+                            <svg aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" class="error-svg">
+                                <path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" fill-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <div class="error-prompt-container">
+                            <p class="error-prompt-heading">No se pudo actuaalizar el usuario
+                            </p>
+                            <div class="error-prompt-wrap">
+                                <p>Lo sentimos encontramos errores el momento de realizar la accion</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <?php
         }
     }
     public function DeleteUsuario($id)
@@ -74,7 +176,28 @@ class SetUsuario
                 echo 2;
             }
         } catch (Exception $ErrorConsulta) {
-            die('ERROR.. NO SE PUDO ELIMINAR LOS DATOS.' . $ErrorConsulta->getMessage());
+
+        ?>
+            <div class="notifications-container">
+                <div class="error-alert">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+
+                            <svg aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" class="error-svg">
+                                <path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" fill-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <div class="error-prompt-container">
+                            <p class="error-prompt-heading">No se pudo eliminar el usuario
+                            </p>
+                            <div class="error-prompt-wrap">
+                                <p>Lo sentimos encontramos errores el momento de realizar la accion</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<?php
         }
     }
 }

@@ -5,13 +5,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["archivo"])) {
 
     // Directorio donde se guardarán los archivos
     $directorio_destino = "../assets/archivos_sis/";
-
+    
     // Validar tipos de archivo permitidos
     $extensiones_permitidas = array("jpg", "jpeg", "png", "gif", "pdf", "docx", "doc", "docxhtml", "xlsx", "csv");
     $tipo_archivo = strtolower(pathinfo($archivo["name"], PATHINFO_EXTENSION));
 
     // Generar un nombre único para el archivo
-    $nombre_archivo = $directorio_destino . uniqid() . "_" . basename($archivo["name"]);
+    $nombre_archivo = $directorio_destino .  basename($archivo["name"]);
     if (!in_array($tipo_archivo, $extensiones_permitidas)) {
 ?>
         <div class="notifications-container">
@@ -77,12 +77,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["archivo"])) {
                             $nombre = $archivo['name'];
 
                             $objet = new Explorador();
-                            if (isset($_GET['carpeta'])) {
-                                $id_capeta = $_GET['carpeta'];
-                            } else {
-                                $id_carpea = null;
+                            $id_carpeta = $_POST['id_carpeta'];
+                            if ($id_carpeta == 'null') {
+                                $id_carpeta = Null;
                             }
-                            $objet->setArchivo($nombre, $tipo_archivo, $nombre_archivo, $peso,  $data['id'], $id_carpea);
+                            $objet->setArchivo($nombre, $tipo_archivo, $nombre, $peso,  $data['id'], $id_carpeta);
                         } else {
                         ?>
                     <div class="notifications-container">

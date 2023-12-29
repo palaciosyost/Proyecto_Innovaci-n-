@@ -1,6 +1,6 @@
 // const d = document;
 
-export default function verPassword(div,input) {
+export default function verPassword(div, input) {
   const $divBtn = document.getElementById(div);
 
   const $input = document.getElementById(input);

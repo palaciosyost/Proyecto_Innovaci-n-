@@ -28,21 +28,21 @@ $data = json_decode($_COOKIE['sesioncookie'], true);
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <!-- Estilos locales css -->
-    <link rel="stylesheet" href="../../css/nav.css">
-    <link rel="stylesheet" href="../../css/explorador.css">
-    <link rel="stylesheet" href="../../css/loader.css">
+    <link rel="stylesheet" href="../../../css/nav.css">
+    <link rel="stylesheet" href="../../../css/explorador.css">
+    <link rel="stylesheet" href="../../../css/loader.css">
 
     <title>Explorador Archivos | FDC CORP</title>
 </head>
 
 <body>
-    <?php include('../../vista/loader.php') ?>
+    <?php include('../../../vista/loader.php') ?>
 
     <div class="panel-page-index">
 
         <div class="header-page">
             <div class="img-header-page">
-                <img src="../../assets/img/logo-empresa.png" alt="fdc corporation">
+                <img src="../../../assets/img/logo-empresa.png" alt="fdc corporation">
             </div>
             <div class="titulo-header">
                 <div class="text-header">
@@ -62,8 +62,7 @@ $data = json_decode($_COOKIE['sesioncookie'], true);
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
                                     <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z" />
                                     <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z" />
-                                </svg></a> / <a href="">Explorador</a>
-
+                                </svg></a> /
                         </span>
                     </p>
                 </div>
@@ -104,15 +103,16 @@ $data = json_decode($_COOKIE['sesioncookie'], true);
             </div>
         </div>
         <br><br>
+
         <div class="contenedor-main">
-            <?php include('../../controlador/get-archivos-contrlador.php') ?>
+            <?php include('../../../controlador/explorador-carpetas-controlador.php') ?>
 
         </div>
     </div>
-    <script src="../js/alert.js"></script>
-    <script src="../js/formArchivos.js"></script>
+    <script src="../../js/alert.js"></script>
+    <script src="../../js/formArchivos.js"></script>
 
-    <script src="../js/loader.js"></script>
+    <script src="../../js/loader.js"></script>
 </body>
 
 </html>

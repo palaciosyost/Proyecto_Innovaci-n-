@@ -22,7 +22,6 @@ function ApiResul() {
         }
       })
       .then((response) => {
-        console.log(response);
         $nombre.value = response.nombres;
         $apellido.value = response.apellidoPaterno;
       })
@@ -34,6 +33,7 @@ function ApiResul() {
   });
 }
 
+// EJECUCION  "FUNCION USO DE API RENIEC DATOS DNI"
 ApiResul();
 
 // INSERCIÓN DE DATOS FORMULARIO DE CONTACTOS
@@ -56,10 +56,10 @@ function AjaxForm() {
       body: JSON.stringify(data),
     })
       .then((resul) => {
-        return resul.text();0
+        return resul.text();
       })
       .then((resultado) => {
-        console.log(resultado);
+        document.querySelector(".mensaje-resul").innerHTML = resultado;
       });
   });
 }

@@ -5,30 +5,30 @@ document.addEventListener("DOMContentLoaded", function () {
   archivoForm.addEventListener("change", function (event) {
     var archivoInput = event.target;
     var archivo = archivoInput.files[0];
-
-    archivoForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      let formData = new FormData();
-      formData.append("archivo", archivo); // Obtener el archivo del campo de entrada
-      console.log(archivo);
-      fetch("../../controlador/set-archivo-controlador.php", {
-        method: "POST",
-        body: formData,
-        // headers: {
-        //   // Agregar el encabezado necesario para enviar archivos
-        //   "Content-Type": "multipart/form-data",
-        // },
-      })
-        .then((response) => response.text())
-        .then((data) => {
-          // Manejar la respuesta del servidor
-          vistaPrevia.innerHTML = data;
-        })
-        .catch((error) => {
-          // Manejar errores
-          console.error(error);
-        });
-    });
+    if (window.location.href)
+      archivoForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        let formData = new FormData();
+        formData.append("archivo", archivo); // Obtener el archivo del campo de entrada
+        const id = new URL(location.href).searchParams.get("keycarpeta");
+        formData.append("id_carpeta", id);
+        fetch(
+          "http://localhost/fdc/Proyecto_Innovaci-n-/controlador/set-archivo-controlador.php",
+          {
+            method: "POST",
+            body: formData,
+          }
+        )
+          .then((response) => response.text())
+          .then((data) => {
+            // Manejar la respuesta del servidor
+            vistaPrevia.innerHTML = data;
+          })
+          .catch((error) => {
+            // Manejar errores
+            console.error(error);
+          });
+      });
     if (archivo && archivo.type.startsWith("image/")) {
       const lector = new FileReader();
 

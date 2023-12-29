@@ -71,6 +71,7 @@ $data = json_decode($_COOKIE['sesioncookie'], true);
 
         </div>
     </div>
+    <div class="mensaje-resul"></div>
 
     <div class="main-contenedor">
         <button data-bs-toggle="modal" data-bs-target="#exampleModal" id='btn-formContacto' class="btn btn-warning" type="button">Añadir nuevo <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
@@ -78,6 +79,7 @@ $data = json_decode($_COOKIE['sesioncookie'], true);
             </svg></button>
         <!-- FORM HIDDEM FORMULARIO  INSERT USUARIOS -->
         <!-- <div class="form-contacto hidden" data-bs-dismiss="modal"> -->
+
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -129,45 +131,45 @@ $data = json_decode($_COOKIE['sesioncookie'], true);
 
     <!-- MODAL PARA EDITA USUARIOS -->
     <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Usuario</h1>
-                    <button type="button" onclick="refrescar()" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form action="" id="form2" method="post">
-                        <div class="input-group flex-nowrap">
-                            <input type="text" class="form-control" name="dni-editar" placeholder="DNI">
-                        </div>
-                        <div class="input-group flex-nowrap">
-                            <input type="text" class="form-control" name="nombre-editar" placeholder="Nombre">
-                        </div>
-                        <div class=" input-group flex-nowrap">
-                            <input type="text" class="form-control" name="apellido-editar" placeholder="Apellido">
-                        </div>
-                        <div class="input-group flex-nowrap">
-                            <input type="password" class="form-control" name="contraseña-editar" placeholder="Contraseña">
-                        </div>
-                        <div class="input-group flex-nowrap">
-                            <select class="form-select" name="rol-editar" aria-label="Default select example">
-                                <option selected>Select. rol</option>
-                                <option value="1">Administrador</option>
-                                <option value="2">Sistemas</option>
-                            </select>
-                        </div>
-                        <input type="hidden" name="id">
+        <div class="modal-dialog "">
+            <div class=" modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Usuario</h1>
+                <button type="button" onclick="refrescar()" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="" id="form2" method="post">
+                    <div class="input-group flex-nowrap">
+                        <input type="text" class="form-control" name="dni-editar" placeholder="DNI">
+                    </div>
+                    <div class="input-group flex-nowrap">
+                        <input type="text" class="form-control" name="nombre-editar" placeholder="Nombre">
+                    </div>
+                    <div class=" input-group flex-nowrap">
+                        <input type="text" class="form-control" name="apellido-editar" placeholder="Apellido">
+                    </div>
+                    <div class="input-group flex-nowrap">
+                        <input type="password" class="form-control" name="contraseña-editar" placeholder="Contraseña">
+                    </div>
+                    <div class="input-group flex-nowrap">
+                        <select class="form-select" name="rol-editar" aria-label="Default select example">
+                            <option selected>Select. rol</option>
+                            <option value="1">Administrador</option>
+                            <option value="2">Sistemas</option>
+                        </select>
+                    </div>
+                    <input type="hidden" name="id">
 
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" onclick="refrescar()" data-bs-dismiss="modal">Close</button>
-                    <input type="submit" class="btn btn-primary" value="Guardar">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="refrescar()" data-bs-dismiss="modal">Close</button>
+                <input type="submit" class="btn btn-primary" value="Guardar">
 
-                    </form>
+                </form>
 
-                </div>
             </div>
         </div>
+    </div>
     </div>
     <script src="../js/alert.js"></script>
     <script src="../js/loader.js"></script>

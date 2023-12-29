@@ -3,8 +3,6 @@ const d = document;
 let $alert = d.querySelector(".alertas"),
   $inputPassword = d.getElementById("password"),
   $form = d.getElementById("form-login");
-console.log($form);
-console.log($inputPassword);
 $form.addEventListener("submit", (e) => {
   e.preventDefault();
   let data = new FormData($form);
@@ -16,7 +14,6 @@ $form.addEventListener("submit", (e) => {
       return respuesta.ok ? respuesta.text() : Promise.reject();
     })
     .then((datos) => {
-      console.log(datos);
       if (datos != 1 && datos != 2) {
         $alert.innerHTML = datos;
         setTimeout(() => {
