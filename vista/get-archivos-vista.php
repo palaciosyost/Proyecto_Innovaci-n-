@@ -12,8 +12,6 @@ if (isset($_GET['keycarpeta'])) {
 $archivos = $explorador->getArchivos($data['id'], $id_carpeta);
 $carpetas = $explorador->getCarpetas($data['id'], $id_carpeta2);
 // Iterar e imprimir carpetas
-print_r($archivos);
-print_r($carpetas);
 
 foreach ($archivos as $archivo) {
 ?>

@@ -18,7 +18,7 @@ class Login
     {
         try {
             $contrasena = md5($contrasena);
-            $sql = "SELECT * FROM usuario WHERE dni = :usuario AND contraseña = :contrasena";
+            $sql = "SELECT * FROM usuario WHERE dni = :usuario AND contraseña = :contrasena AND eliminado != 1";
             $query = $this->conexion->prepare($sql);
             $query->bindValue(':usuario', $usuario);
             $query->bindValue(':contrasena', $contrasena);

@@ -166,7 +166,7 @@ class SetUsuario
     public function DeleteUsuario($id)
     {
         try {
-            $sql = "DELETE FROM usuario WHERE id = :id";
+            $sql = "UPDATE usuario SET eliminado = 1 WHERE id = :id";
             $query = $this->conexion->prepare($sql);
             $query->bindValue(':id', $id);
             $query->execute();

@@ -20,7 +20,7 @@ class getUsuarios
     public function getUdsuariosAll()
     {
         try {
-            $sql = "SELECT * FROM usuario";
+            $sql = "SELECT * FROM usuario WHERE eliminado != 1";
             $query = $this->conexion->prepare($sql);
             $query->execute();
             while ($resul = $query->fetch(PDO::FETCH_ASSOC)) {
@@ -30,13 +30,11 @@ class getUsuarios
                 } else {
                     $resul['id_rol'] = 'Sistemas';
                 }
-                $contra =
-                    $this->datos[] = $resul;
+                $this->datos[] = $resul;
             }
         } catch (Exception $error) {
             die('ERROR DE ENTREGA: DATOS NO ENCONTRADOS ' . $error->getMessage());
         }
         return $this->datos;
     }
-    
 }
